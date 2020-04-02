@@ -14,15 +14,19 @@ public class GreetingResource {
     @Inject
     GreetingService service;
 
+    @Inject
+    MyBean myBean; // inject MySuperBean here, injection is not ambiguous
+
+
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    //@Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
         return service.greeting(name);
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    //@Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "hello";
     }
