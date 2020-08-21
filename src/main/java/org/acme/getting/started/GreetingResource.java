@@ -6,28 +6,32 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-@Path("/hello")
+import java.util.Optional;
+
+@ConfigProperty(name = "application-info")
+@Path("/greeting")
 public class GreetingResource {
 
-    @Inject
-    GreetingService service;
+    //@ConfigProperty(name = "greeting.message")
 
     @Inject
-    MyBean myBean; // inject MySuperBean here, injection is not ambiguous
+    private String warning;
 
+    @ConfigProperty(name = "application-info.name")
+    String message;
+
+    @ConfigProperty(name = "greeting.suffix", defaultValue = "!")
+    String suffix;
+
+    @ConfigProperty(name = "greeting.name")
+    Optional<String> name;
 
     @GET
-    //@Produces(MediaType.TEXT_PLAIN)
-    @Path("/greeting/{name}")
-    public String greeting(@PathParam String name) {
-        return service.greeting(name);
-    }
-
-    @GET
-    //@Produces(MediaType.TEXT_PLAIN)
+    //Warning! @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "hello";
+        return message + " " + name.orElse("world") + suffix;
     }
 }

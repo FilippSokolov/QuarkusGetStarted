@@ -1,0 +1,105 @@
+
+quarkus:
+  package:
+    uber-jar: false
+  http:
+    cors: false
+  http:
+    cor
+
+
+
+
+
+#"%<caret>":
+#  quarkus:
+#    thread-pool:
+#      prefill: false
+#
+#"%dev":
+#  quarkus:
+#    thread-pool:
+#      prefill: false
+#
+#"%test":
+#  quarkus:
+#    thread-pool:
+#      prefill: false
+#
+#
+#
+#quarkus:
+#  %<caret>
+#  log:
+#    category:
+#      "org.my":
+#        use-parent-handlers: notfalse
+#    syslog:
+#      "org":
+#        use-counting-framing: false
+#    file:
+#      enable: false
+#  http:
+#    host: localhost
+#    host: localhost
+#        port: 8084
+#    auth:
+#      permission:
+#        "so.me":
+#          policy:
+#    access-log:
+#      category: %<caret>
+##  log:
+##    level: ALL
+##    syslog:
+##      level:
+#
+#
+#application-info:
+#  name: quarkus-service
+#  framework:
+#    name: Quarkus
+#    release-year: 2019
+#
+#
+#
+## YAML supports comments
+##quarkus:
+##  datasource:
+##    url: jdbc:postgresql://localhost:5432/some-database
+##    driver: org.postgresql.Driver
+##    username: quarkus
+##    password: quarkus
+##
+### REST Client configuration property
+##org:
+##  acme:
+##    restclient:
+##      CountriesService/mp-rest/url: https://restcountries.eu/rest
+##
+### For configuration property names that use quotes, do not split the string inside the quotes.
+##quarkus:
+##  log:
+##    category:
+##      "io.quarkus.category":
+#prefix:
+#  bean:
+#    string: %<caret>
+#
+##        level: INFO
+#
+##"%dev":
+##  quarkus:
+##    datasource:
+##      url: jdbc:postgresql://localhost:5432/some-database
+##      driver: org.postgresql.Driver
+##      username: quarkus
+##      password: quarkus
+#
+#
+#"%prod":
+#  quarkus:
+#    thread-pool:
+#      prefill: false
+#
+#
